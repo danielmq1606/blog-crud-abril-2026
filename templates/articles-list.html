@@ -4,7 +4,9 @@
     <h1>Lista de Articulos</h1>
     <ul>
         {% for publication in article_list %}
-            <li>{{ publication.title }} - {{ publication.author }}</li>
+            <li>
+                <a href="{% url 'article-detail' pk=publication.pk %}">{{ publication.title }}</a> - {{ publication.author }}
+            </li>
         {% endfor %}
     </ul>
 {% endblock content %}
